@@ -9,10 +9,10 @@ branches:
 cache: node_modules  # кеширование
 
 install:
-  - npm install  # команда установки зависимостей
+  - yarn install  # команда установки зависимостей
 
 build: off  # отключаем встроенную в appveyor систему сборки
 
 build_script:
-  - npm run build   # команда сборки
+  - yarn run build   # команда сборки
 
