@@ -1,0 +1,184 @@
+html {
+  height: 100%;
+  font-size: 20px;
+}
+
+body {
+  height: 100%;
+  min-width: 320px;
+  background: #107abb;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+}
+
+.page {
+  max-width: 1200px;
+  min-width: 668px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards-container {
+  display: flex;
+  align-items: flex-start;
+  color: #1e3c4d;
+}
+
+.column {
+  width: 400px;
+  border-radius: 5px;
+  padding: 0.8rem 0.5rem;
+  background-color: #dee2e5;
+}
+
+.column:nth-child(n + 2) {
+  margin-left: 0.5rem;
+}
+
+.card-title {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.cards {
+  min-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-card {
+  color: #798c97;
+  padding-top: 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  background-size: 0 1px;
+  transition: background-size 0.3s ease-out, color 0.3s ease-out;
+}
+
+.add-card:hover {
+  color: #1e3c4d;
+  background: linear-gradient(to left, #f69ec4, #f9dd94 100%);
+  background-position: 0% 100%;
+  background-size: 43% 1px;
+  background-repeat: no-repeat;
+}
+
+.card {
+  position: relative;
+  min-height: 3.5rem;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.new-card-form {
+  height: 100%;
+  padding-top: 0.5rem;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.card-input {
+  display: block;
+  width: 100%;
+  color: #1e3c4d;
+  font-family: inherit;
+  font-size: 0.8rem;
+  border: 1px solid rgb(161, 161, 161);
+  border-radius: 5px;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0.5rem 1rem 2rem 1rem;
+}
+
+.card-input:focus {
+  outline: 1px solid rgb(49, 49, 49);
+  outline-offset: -1px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.add-button {
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-out;
+  font-weight: 700;
+  background-color: #5ca84d;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+.add-button:hover {
+  background-color: #6fcf5c;
+}
+
+.add-button:focus {
+  outline: 1px solid #6fcf5c;
+  outline-offset: 1px;
+}
+
+.cancel-btn {
+  color: #1e3c4d;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: #dee2e5;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: color 0.3s ease-out;
+}
+
+.delete-btn {
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #dee2e5;
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+}
+
+.cancel-btn:hover,
+.delete-btn:hover {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.dragged {
+  position: absolute;
+  z-index: 999;
+  cursor: grabbing;
+}
