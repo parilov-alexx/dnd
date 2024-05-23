@@ -13,6 +13,9 @@ install:
 
 build: off  # отключаем встроенную в appveyor систему сборки
 
+lint_script:
+  - yarn lint  # скрипт линтера
+
 build_script:
   - yarn run build   # команда сборки
 

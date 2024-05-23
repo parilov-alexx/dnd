@@ -181,4 +181,5 @@ body {
   position: absolute;
   z-index: 999;
   cursor: grabbing;
+  pointer-events: none;
 }
