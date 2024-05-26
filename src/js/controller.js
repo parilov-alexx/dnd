@@ -166,7 +166,7 @@ export default class PageController {
     this.cloneEl.style.width = `${this.dragEl.offsetWidth}px`;
     this.cloneEl.style.height = `${this.dragEl.offsetHeight}px`;
     this.cloneEl.classList.add('dragged');
-    this.dragEl.classList.add('hidden');
+
     document.body.append(this.cloneEl);
 
     this.cloneEl.style.left = `${event.clientX - this.shiftX}px`;
@@ -178,7 +178,7 @@ export default class PageController {
     if (!this.cloneEl) {
       return;
     }
-
+    this.dragEl.classList.add('hidden');
     let newX = event.clientX - this.shiftX;
     let newY = event.clientY - this.shiftY;
 
@@ -227,11 +227,11 @@ export default class PageController {
     const targetCards = targetPos.closest('.cards');
     if (targetCards === null) {
       this.dragEl.parentElement.append(this.dragEl);
-    } else if (targetCards && targetCards === targetPos) {
+    } else if (targetCards && targetCards.lastChild === targetPos) {
       targetCards.append(this.dragEl);
     } else if (targetCards && targetCards !== targetPos) {
       const card = targetPos.closest('.card');
-      card.after(this.dragEl);
+      card.before(this.dragEl);
     }
     this.endingDrag();
   }
